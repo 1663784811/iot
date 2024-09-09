@@ -6,7 +6,33 @@ const router = createRouter({
     routes: [
         {
             path: '',
+            redirect: '/home',
+        },
+        {
+            path: '',
             component: () => import('@/views/AppMain.vue'),
+            children: [
+                {
+                    path: '/home',
+                    name: 'home',
+                    component: () => import('@/views/home/Home.vue')
+                },
+                {
+                    path: '/task',
+                    name: 'task',
+                    component: () => import('@/views/task/Task.vue')
+                },
+                {
+                    path: '/message',
+                    name: 'message',
+                    component: () => import('@/views/message/Message.vue')
+                },
+                {
+                    path: '/my',
+                    name: 'my',
+                    component: () => import('@/views/my/My.vue')
+                }
+            ]
         }
     ]
 })

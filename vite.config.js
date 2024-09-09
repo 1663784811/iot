@@ -26,5 +26,7 @@ export default defineConfig({
             {find: '@', replacement: srcPath},
         ],
     },
-
+    server: {
+        host: "0.0.0.0"
+    },
 })
